@@ -6,10 +6,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "event_id")
 public class Conference extends Event {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
     @OneToMany(mappedBy = "conference")
     private List<Speaker> speakers;
 
@@ -18,13 +17,6 @@ public class Conference extends Event {
     public Conference(String title, LocalDate date, Integer duration, String location, List<Speaker> speakers) {
         super(title, date, duration, location, null);
         this.speakers = speakers;
-    }
-    public Long getId() {
-        return id;
-
-    }
-    public void setId(Long id) {
-        this.id = id;
     }
     public List<Speaker> getSpeakers() {
         return speakers;
