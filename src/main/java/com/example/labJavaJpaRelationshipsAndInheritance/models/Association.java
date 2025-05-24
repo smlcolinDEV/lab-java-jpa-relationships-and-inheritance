@@ -10,7 +10,7 @@ public class Association {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "association")
+    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Division> divisions;
 
     public Association() {
