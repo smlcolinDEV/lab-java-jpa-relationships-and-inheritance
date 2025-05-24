@@ -10,8 +10,7 @@ public class Association {
     private Long id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "division_id")
+    @OneToMany(mappedBy = "division")
     private List<Division> divisions;
 
     public Association() {

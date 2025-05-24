@@ -16,7 +16,7 @@ public class Division {
     @JoinColumn(name = "president_id")
     private Member president;
 
-    @OneToMany
+    @OneToMany(mappedBy = "division")
     private List<Member> members;
 
     public Division() {

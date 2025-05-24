@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public class Event {
+public abstract class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
