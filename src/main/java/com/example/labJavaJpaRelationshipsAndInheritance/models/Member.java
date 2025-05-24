@@ -20,13 +20,19 @@ public class Member {
 
     public Member() {
     }
-
-    public Member(String name, MemberStatus status, LocalDate renewalDate) {
+    public Member(String name, MemberStatus status, LocalDate renewalDate, Division division) {
         this.name = name;
         this.status = status;
         this.renewalDate = renewalDate;
-
+        this.division = division;
     }
+
+    public Member(String s, MemberStatus memberStatus, LocalDate now) {
+        this.name = s;
+        this.status = memberStatus;
+        this.renewalDate = now;
+    }
+
     public Long getId() {
         return id;
     }

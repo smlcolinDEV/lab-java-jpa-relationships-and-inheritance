@@ -22,15 +22,27 @@ public class Division {
     @ManyToOne
     private Association association;
 
-
     public Division() {
     }
-    public Division(String name, String district, Member president, List<Member> members) {
+    public Division(String name, String district, Member president, List<Member> members, Association association) {
         this.name = name;
         this.district = district;
         this.president = president;
         this.members = members;
+        this.association = association;
+
     }
+    public Division(String name, String district) {
+        this.name = name;
+        this.district = district;
+    }
+    public Association getAssociation() {
+        return association;
+    }
+    public void setAssociation(Association association) {
+        this.association = association;
+    }
+
     public Long getId() {
         return id;
     }
@@ -49,10 +61,10 @@ public class Division {
     public void setDistrict(String district) {
         this.district = district;
     }
-    public Member getMember() {
+    public Member getPresident() {
         return president;
     }
-    public void setMember(Member president) {
+    public void setPresident(Member president) {
         this.president = president;
     }
     public List<Member> getMembers() {
