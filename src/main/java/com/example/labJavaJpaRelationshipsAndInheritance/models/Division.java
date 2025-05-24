@@ -19,6 +19,10 @@ public class Division {
     @OneToMany(mappedBy = "division")
     private List<Member> members;
 
+    @ManyToOne
+    private Association association;
+
+
     public Division() {
     }
     public Division(String name, String district, Member president, List<Member> members) {

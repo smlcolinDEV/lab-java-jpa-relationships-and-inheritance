@@ -52,5 +52,12 @@ public class Member {
     public void setRenewalDate(LocalDate renewalDate) {
         this.renewalDate = renewalDate;
     }
+    public Division getDivision() {
+        return division;
+    }
+    public void setDivision(Division division) {
+        this.division = division;
+    }
+
 
 }

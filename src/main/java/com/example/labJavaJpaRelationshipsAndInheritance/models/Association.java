@@ -10,7 +10,7 @@ public class Association {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "division")
+    @OneToMany(mappedBy = "association")
     private List<Division> divisions;
 
     public Association() {
@@ -31,4 +31,11 @@ public class Association {
     public void setName(String name) {
         this.name = name;
     }
+    public List<Division> getDivisions() {
+        return divisions;
+    }
+    public void setDivisions(List<Division> divisions) {
+        this.divisions = divisions;
+    }
+
 }
