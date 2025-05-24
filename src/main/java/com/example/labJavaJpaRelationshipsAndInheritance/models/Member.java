@@ -10,13 +10,13 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
-
     @Enumerated(EnumType.STRING)
     private MemberStatus status;
-
     private LocalDate renewalDate;
+    @ManyToOne
+    @JoinColumn(name = "division_id")
+    private Divison division;
 
     public Member() {
     }

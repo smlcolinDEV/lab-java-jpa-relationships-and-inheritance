@@ -16,7 +16,8 @@ public class Divison {
     @JoinColumn(name = "president_id")
     private Member president;
 
-    @OneToMany(mappedBy = "division")
+    @ManyToMany
+    @JoinTable(name = "divison_members", joinColumns = @JoinColumn(name = "divison_id"), inverseJoinColumns = @JoinColumn(name = "member_id"))
     private List<Member> members;
 
     public Divison() {
