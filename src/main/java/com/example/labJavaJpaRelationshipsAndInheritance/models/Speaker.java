@@ -1,7 +1,7 @@
 package com.example.labJavaJpaRelationshipsAndInheritance.models;
 
 import jakarta.persistence.*;
-
+@Entity
 public class Speaker {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
