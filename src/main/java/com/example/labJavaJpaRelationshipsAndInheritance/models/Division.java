@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Divison {
+public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -16,13 +16,12 @@ public class Divison {
     @JoinColumn(name = "president_id")
     private Member president;
 
-    @ManyToMany
-    @JoinTable(name = "divison_members", joinColumns = @JoinColumn(name = "divison_id"), inverseJoinColumns = @JoinColumn(name = "member_id"))
+    @OneToMany
     private List<Member> members;
 
-    public Divison() {
+    public Division() {
     }
-    public Divison(String name, String district, Member president, List<Member> members) {
+    public Division(String name, String district, Member president, List<Member> members) {
         this.name = name;
         this.district = district;
         this.president = president;

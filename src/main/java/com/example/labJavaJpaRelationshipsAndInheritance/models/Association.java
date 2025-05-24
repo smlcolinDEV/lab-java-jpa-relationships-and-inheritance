@@ -1,9 +1,6 @@
 package com.example.labJavaJpaRelationshipsAndInheritance.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -13,12 +10,13 @@ public class Association {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "association")
-    private List<Divison> divisions;
+    @ManyToOne
+    @JoinColumn(name = "division_id")
+    private List<Division> divisions;
 
     public Association() {
     }
-    public Association(String name, List<Divison> divisions) {
+    public Association(String name, List<Division> divisions) {
         this.name = name;
         this.divisions = divisions;
     }

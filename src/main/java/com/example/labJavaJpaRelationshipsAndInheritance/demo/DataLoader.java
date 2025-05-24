@@ -2,9 +2,8 @@ package com.example.labJavaJpaRelationshipsAndInheritance.demo;
 
 import com.example.labJavaJpaRelationshipsAndInheritance.enums.MemberStatus;
 import com.example.labJavaJpaRelationshipsAndInheritance.models.Association;
-import com.example.labJavaJpaRelationshipsAndInheritance.models.Divison;
+import com.example.labJavaJpaRelationshipsAndInheritance.models.Division;
 import com.example.labJavaJpaRelationshipsAndInheritance.models.Member;
-import com.example.labJavaJpaRelationshipsAndInheritance.models.Name;
 import com.example.labJavaJpaRelationshipsAndInheritance.repositories.AssociationRepository;
 import com.example.labJavaJpaRelationshipsAndInheritance.repositories.DivisonRepository;
 import com.example.labJavaJpaRelationshipsAndInheritance.repositories.MemberRepository;
@@ -42,33 +41,33 @@ public class DataLoader implements CommandLineRunner {
 
             var members1 = new ArrayList<Member>();
             members1.add(member1);
-            var divison1 = new Divison("Divison 1","<NAME1>",member1,members1);
+            var divison1 = new Division("Divison 1","<NAME1>",member1,members1);
 
             var members2 = new ArrayList<Member>();
             members2.add(member2);
-            var divison2 = new Divison("Divison 2","<NAME2>",member2,members2);
+            var divison2 = new Division("Divison 2","<NAME2>",member2,members2);
 
             var members3 = new ArrayList<Member>();
             members3.add(member3);
-            var divison3 = new Divison("Divison 3","<NAME>",member3,members3);
+            var divison3 = new Division("Divison 3","<NAME>",member3,members3);
 
             var members4 = new ArrayList<Member>();
             members4.add(member4);
-            var divison4 = new Divison("Divison 4","<NAME4>",member4,members4);
+            var divison4 = new Division("Divison 4","<NAME4>",member4,members4);
 
             var members5 = new ArrayList<Member>();
             members5.add(member5);
-            var divison5 = new Divison("Divison 5","<NAME5>",member5,members5);
+            var divison5 = new Division("Divison 5","<NAME5>",member5,members5);
 
             var members6 = new ArrayList<Member>();
             members6.add(member6);
-            var divison6 = new Divison("Divison 6","<NAME6>",member6,members6);
+            var divison6 = new Division("Divison 6","<NAME6>",member6,members6);
 
             var members7 = new ArrayList<Member>();
             members7.add(member7);
-            var divison7 = new Divison("Divison 7","<NAME7>",member7,members7);
+            var divison7 = new Division("Divison 7","<NAME7>",member7,members7);
 
-            var divisions = new ArrayList<Divison>();
+            var divisions = new ArrayList<Division>();
             divisions.add(divison1);
             divisions.add(divison2);
             divisions.add(divison3);

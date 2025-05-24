@@ -14,9 +14,8 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private MemberStatus status;
     private LocalDate renewalDate;
-    @ManyToOne
-    @JoinColumn(name = "division_id")
-    private Divison division;
+    @OneToMany
+    private Division division;
 
     public Member() {
     }
