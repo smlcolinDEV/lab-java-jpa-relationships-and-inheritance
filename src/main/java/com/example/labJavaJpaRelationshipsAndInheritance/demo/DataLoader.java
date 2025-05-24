@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -37,35 +38,26 @@ public class DataLoader implements CommandLineRunner {
             var member5 = new Member("Jill", MemberStatus.ACTIVE, LocalDate.now());
             var member6 = new Member("Jack", MemberStatus.ACTIVE, LocalDate.now());
             var member7 = new Member("Hailey", MemberStatus.ACTIVE, LocalDate.now());
-            var member8 = new Member("Hannah", MemberStatus.ACTIVE, LocalDate.now());
 
-            var members1 = new ArrayList<Member>();
-            members1.add(member1);
-            var divison1 = new Division("Divison 1","<NAME1>",member1,members1);
 
-            var members2 = new ArrayList<Member>();
-            members2.add(member2);
-            var divison2 = new Division("Divison 2","<NAME2>",member2,members2);
+            List<Member> allMembers = new ArrayList<>();
+            allMembers.add(member1);
+            allMembers.add(member2);
+            allMembers.add(member3);
+            allMembers.add(member4);
+            allMembers.add(member5);
+            allMembers.add(member6);
+            allMembers.add(member7);
 
-            var members3 = new ArrayList<Member>();
-            members3.add(member3);
-            var divison3 = new Division("Divison 3","<NAME>",member3,members3);
 
-            var members4 = new ArrayList<Member>();
-            members4.add(member4);
-            var divison4 = new Division("Divison 4","<NAME4>",member4,members4);
+            var divison1 = new Division("Divison 1","<NAME1>",member1,allMembers);
+            var divison2 = new Division("Divison 2","<NAME>",member2,allMembers);
+            var divison3 = new Division("Divison 3","<NAME>",member3,allMembers);
+            var divison4 = new Division("Divison 4","<NAME>",member4,allMembers);
+            var divison5 = new Division("Divison 5","<NAME>",member5,allMembers);
+            var divison6 = new Division("Divison 6","<NAME>",member6,allMembers);
+            var divison7 = new Division("Divison 7","<NAME>",member7,allMembers);
 
-            var members5 = new ArrayList<Member>();
-            members5.add(member5);
-            var divison5 = new Division("Divison 5","<NAME5>",member5,members5);
-
-            var members6 = new ArrayList<Member>();
-            members6.add(member6);
-            var divison6 = new Division("Divison 6","<NAME6>",member6,members6);
-
-            var members7 = new ArrayList<Member>();
-            members7.add(member7);
-            var divison7 = new Division("Divison 7","<NAME7>",member7,members7);
 
             var divisions = new ArrayList<Division>();
             divisions.add(divison1);
@@ -82,7 +74,7 @@ public class DataLoader implements CommandLineRunner {
 
             associationRepository.saveAll(associations);
             divisonRepository.saveAll(divisions);
-            memberRepository.saveAll(members1);
+            memberRepository.saveAll(allMembers);
 
 
     }
